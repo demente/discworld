@@ -14,37 +14,18 @@ public class Game {
 //	Scanner k = new Scanner (System.in);
 //	System.out.println("Enter a digit: ");
 //	int digit1 = k.nextInt();
-	private List<Player> players;
-	private int activePlayer;
-	private List<MapArea> mapAreas;
-	private Queue<Card> drawDeck;
-	private Queue<RandomEvent> randomEvents;
-
-	public Game(int numberOfPlayers) {
-
-	}
-
-	private Player getActivePlayer() {
-		return players.get(activePlayer);
-	}
-
-	private void setActivePlayer(int p) {
-		this.activePlayer = p;
-	}
-
-	private List<MapArea> getMapAreas() {
-		return mapAreas;
-	}
-
-	private List<Card> drawCard(int n) {
-		List<Card> cards = new ArrayList<Card>();
-		for (int i = 0; i < n; i++) {
-			cards.add(drawDeck.poll());
-		}
-		return cards;
-	}
-
+	
 //	private RandomEvent toggleRandomEvent() {
-//		return randomEvents.poll();
-//	}
+//	return randomEvents.poll();
+//}
+	
+	private static final int NUMBER_OF_PLAYERS = 2;
+	
+	public static void main(String[] args) {
+		GameState gs = new GameState(NUMBER_OF_PLAYERS);
+		gs.setActivePlayer(0);
+		for(int i =0;i< gs.getPlayers().size();i++){
+			
+		}
+	}
 }
