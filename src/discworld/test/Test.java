@@ -6,6 +6,7 @@ import java.util.List;
 import discworld.action.Action;
 import discworld.action.PutMinion;
 import discworld.cards.Card;
+import discworld.dice.Dice;
 import discworld.model.minion.Minion;
 import discworld.model.player.Color;
 import discworld.model.player.Personality;
@@ -35,6 +36,12 @@ public class Test {
 		//put minion
 		Card c = new Card("Mr boggis", actions,p1);
 		c.toggleAction(actions.get(0));
+		for(int i=0;i<10000;i++){
+		int rollDice = Dice.roll();
+		if(rollDice > 12){
+			System.out.println("Wriong");
+		}
+		}
 	}
 }
 

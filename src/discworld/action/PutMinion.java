@@ -4,31 +4,28 @@ import java.util.List;
 import java.util.Scanner;
 
 import discworld.map.MapArea;
+import discworld.model.minion.Minion;
 import discworld.model.player.Player;
 
 public class PutMinion implements Action {
 
 	@Override
-	public void toggleAction(Player activePlayer) {
-		// TODO Auto-generated method stub
-		activePlayer.getUnassignedMinions();
-		//ask for area number
-		Scanner k = new Scanner (System.in);
-		System.out.println("Enter a digit: ");
-		int digit1 = k.nextInt();
-		//TODO: transform digit to MapArea somehow
-		//check if is adajent to areas with minions
-		List<MapArea> areasWithMinions = activePlayer.getAreasWithMinions();
-		boolean adajent = false;
-		for(MapArea a : areasWithMinions){
-			if(a.isAdajent(digit1)){
-				adajent = true;
-				break;
-			}
+	public void toggleAction(ActionParameters params) {
+		Player activePlayer = params.getActivePlayer();
+		activePlayer.getUnassignedMinions().get(0).add(params.getSelectedArea());
+		if(params.getSelectedArea().getMinions().size()>1){
+			params.getSelectedArea().addTroubleMarker();
 		}
-		//if adajent add
-		
-		System.out.println(digit1);
+		//check if is adajent to areas with minions
+		//TODO: check adajency before toggling action and availability of unassigned minions
+//		List<MapArea> areasWithMinions = activePlayer.getAreasWithMinions();
+//		for(MapArea a : areasWithMinions){
+//			if(a.isAdajent(params.getSelectedArea())){
+//				//if adajent add
+//				
+//				break;
+//			}
+//		}
 		//else error message
 		
 	}

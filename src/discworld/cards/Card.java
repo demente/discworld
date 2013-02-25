@@ -24,7 +24,6 @@ public class Card {
 	}
 	
 	public void toggleAction(Action a){
-		a.toggleAction(owner);
 	}
 	
 }

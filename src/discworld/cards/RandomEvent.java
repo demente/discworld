@@ -1,5 +1,7 @@
 package discworld.cards;
 
-public class RandomEvent {
+public enum RandomEvent {
+
+	DRAGON, FLOOD,FIRE, FOG, RIOTS, EXPLOSION, MURDERS, DEMONS,SUBSIDENCE,STUPIDJOHNSON,TROLLS,EARTHQUAKE
 
 }

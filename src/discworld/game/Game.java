@@ -10,7 +10,10 @@ import discworld.map.MapArea;
 import discworld.model.player.Player;
 
 public class Game {
-
+	//ask for area number
+//	Scanner k = new Scanner (System.in);
+//	System.out.println("Enter a digit: ");
+//	int digit1 = k.nextInt();
 	private List<Player> players;
 	private int activePlayer;
 	private List<MapArea> mapAreas;
@@ -41,7 +44,7 @@ public class Game {
 		return cards;
 	}
 
-	private RandomEvent toggleRandomEvent() {
-		return randomEvents.poll();
-	}
+//	private RandomEvent toggleRandomEvent() {
+//		return randomEvents.poll();
+//	}
 }

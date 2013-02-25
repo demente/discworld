@@ -13,6 +13,7 @@ public class MapArea {
 	private Building building;
 	private List<MapArea> adajentAreas;
 	private boolean troubleMarker;
+	private boolean adajentToRiver; //TODO: add to constructor
 
 	public MapArea(String name, int number) {
 		this.name = name;
@@ -25,6 +26,47 @@ public class MapArea {
 		this.number = number;
 		this.minions = minions;
 		this.troubleMarker = troubleMarker;
+	}
+
+	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public boolean isAdajentToRiver() {
+		return adajentToRiver;
+	}
+
+	public void setAdajentToRiver(boolean adajentToRiver) {
+		this.adajentToRiver = adajentToRiver;
+	}
+
+	public int getNumber() {
+		return number;
+	}
+
+	public void setNumber(int number) {
+		this.number = number;
+	}
+
+	public boolean isTroubleMarker() {
+		return troubleMarker;
+	}
+
+	public void setTroubleMarker(boolean troubleMarker) {
+		this.troubleMarker = troubleMarker;
+	}
+
+	public void setBuilding(Building building) {
+		this.building = building;
+	}
+
+	public void setAdajentAreas(List<MapArea> adajentAreas) {
+		this.adajentAreas = adajentAreas;
 	}
 
 	public void addTroubleMarker() {

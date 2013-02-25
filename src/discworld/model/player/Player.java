@@ -12,10 +12,13 @@ public class Player {
 
 	private Color color;
 	private Personality personality;
-	private int number; //0,1,2,3
+	private int number; // 0,1,2,3
 	private List<Building> buildings = new ArrayList<Building>();
 	private int money = 10;
-	private List<Minion> minions = new ArrayList<Minion>(); //all 12 minions in here, some assigned to area, some not
+	private List<Minion> minions = new ArrayList<Minion>(); // all 12 minions in
+															// here, some
+															// assigned to area,
+															// some not
 	private List<Card> cards = new ArrayList<Card>();
 
 	public Player(Personality personality, Color color, int number) {
@@ -23,44 +26,30 @@ public class Player {
 		this.personality = personality;
 		this.number = number;
 	}
-	
-	
 
 	public Color getColor() {
 		return color;
 	}
 
-
-
 	public void setColor(Color color) {
 		this.color = color;
 	}
-
-
 
 	public Personality getPersonality() {
 		return personality;
 	}
 
-
-
 	public void setPersonality(Personality personality) {
 		this.personality = personality;
 	}
-
-
 
 	public int getNumber() {
 		return number;
 	}
 
-
-
 	public void setNumber(int number) {
 		this.number = number;
 	}
-
-
 
 	public List<Building> getBuildings() {
 		return buildings;
@@ -81,22 +70,40 @@ public class Player {
 	public List<Minion> getMinions() {
 		return minions;
 	}
-	
+
+	public void addMoney(int money) {
+		this.money += money;
+	}
+
+	public void removeMoney(int money) {
+		this.money -= money;
+	}
+
 	public List<Minion> getUnassignedMinions() {
-		List<Minion> min =new ArrayList();
-		for(Minion m:minions){
-			if(m.getArea() == null){
+		List<Minion> min = new ArrayList();
+		for (Minion m : minions) {
+			if (m.getArea() == null) {
 				min.add(m);
 			}
 		}
 		return min;
 	}
-	
-	//TODO: check if we need to account buildings as well
-	public List<MapArea> getAreasWithMinions(){
+
+	public List<Minion> getAssignedMinions() {
+		List<Minion> min = new ArrayList();
+		for (Minion m : minions) {
+			if (m.getArea() != null) {
+				min.add(m);
+			}
+		}
+		return min;
+	}
+
+	// TODO: check if we need to account buildings as well
+	public List<MapArea> getAreasWithMinions() {
 		List<MapArea> areas = new ArrayList<MapArea>();
-		for(Minion m : minions){
-			if(m.getArea() != null){
+		for (Minion m : minions) {
+			if (m.getArea() != null) {
 				areas.add(m.getArea());
 			}
 		}
