@@ -3,9 +3,15 @@ package discworld.action;
 public class WithdrawMoney implements Action{
 
 	int moneyAmount;
+	boolean fromPlayer;
 	
 	public WithdrawMoney(int m){
 		this.moneyAmount = m;
+	}
+	
+	public WithdrawMoney(int m,boolean fromPlayer){
+		this.moneyAmount = m;
+		this.fromPlayer = fromPlayer;
 	}
 	
 	@Override

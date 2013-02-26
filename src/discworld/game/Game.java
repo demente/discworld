@@ -21,6 +21,7 @@ public class Game {
 	
 	private static final int NUMBER_OF_PLAYERS = 2;
 	
+	
 	public static void main(String[] args) {
 		GameState gs = new GameState(NUMBER_OF_PLAYERS);
 		gs.setActivePlayer(0);

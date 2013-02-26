@@ -27,6 +27,11 @@ public class GameState {
 	private Queue<RandomEvent> randomEvents;
 
 	public GameState(int numberOfPlayers) {
+		createPlayers(numberOfPlayers);
+		initiateDeck();
+	}
+	
+	private void createPlayers(int numberOfPlayers){
 		Color[] colors = Color.values();
 		List<Personality> personalities = new ArrayList<Personality>();
 		for(int i=0;i<numberOfPlayers;i++){
@@ -34,7 +39,6 @@ public class GameState {
 			personalities.add(personality);
 			players.add(new Player(personality, colors[i], i));
 		}
-		initiateDeck();
 	}
 
 	private void initiateDeck(){
