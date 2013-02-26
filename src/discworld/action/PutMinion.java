@@ -8,7 +8,11 @@ import discworld.model.minion.Minion;
 import discworld.model.player.Player;
 
 public class PutMinion implements Action {
-
+	private String name;
+	
+	public PutMinion(String name) {
+	this.name = name;
+	}
 	@Override
 	public void toggleAction(ActionParameters params) {
 		Player activePlayer = params.getActivePlayer();
@@ -28,6 +32,12 @@ public class PutMinion implements Action {
 //		}
 		//else error message
 		
+	}
+
+	@Override
+	public String getName() {
+		// TODO Auto-generated method stub
+		return name;
 	}
 
 }

@@ -7,6 +7,7 @@ import discworld.cards.Card;
 import discworld.map.Building;
 import discworld.map.MapArea;
 import discworld.model.minion.Minion;
+import discworld.model.minion.MinionType;
 
 public class Player {
 
@@ -25,6 +26,13 @@ public class Player {
 		this.color = color;
 		this.personality = personality;
 		this.number = number;
+		createMinions();
+	}
+	
+	public void createMinions(){
+		for(int i=0;i<12;i++){
+			getMinions().add(new Minion(this, MinionType.PLAYER));
+		}
 	}
 
 	public Color getColor() {

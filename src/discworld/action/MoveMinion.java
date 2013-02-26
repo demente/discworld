@@ -3,7 +3,11 @@ package discworld.action;
 import discworld.map.MapArea;
 
 public class MoveMinion implements Action {
-
+	private String name;
+	
+	public MoveMinion(String name) {
+		this.name = name;
+	}
 	@Override
 	public void toggleAction(ActionParameters params) {
 		MapArea fromArea = params.getSelectedMinion().getArea();
@@ -15,6 +19,11 @@ public class MoveMinion implements Action {
 		if(fromArea.getMinions().size()<2){
 			fromArea.removeTroubleMarker();
 		}
+	}
+
+	@Override
+	public String getName() {
+		return name;
 	}
 
 }

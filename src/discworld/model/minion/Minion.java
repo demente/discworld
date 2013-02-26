@@ -43,10 +43,16 @@ public class Minion {
 	public void add(MapArea m) {
 		m.getMinions().add(this);
 		area = m;
+		if(m.getMinions().size() > 1){
+			m.setTroubleMarker(true);
+		}
 	}
 
 	public void remove(MapArea m) {
 		m.getMinions().remove(this);
+		if(m.getMinions().size() < 2){
+			m.setTroubleMarker(false);
+		}
 		area = null;
 	}
 

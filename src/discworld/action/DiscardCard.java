@@ -3,10 +3,11 @@ package discworld.action;
 import discworld.cards.Card;
 
 public class DiscardCard implements Action {
-
+	private String name;
 	private int cardNumber;
 	
-	public DiscardCard(int cardNumber){
+	public DiscardCard(String name,int cardNumber){
+		this.name = name;
 		this.cardNumber = cardNumber;
 	}
 	
@@ -22,6 +23,11 @@ public class DiscardCard implements Action {
 			}
 		}
 
+	}
+
+	@Override
+	public String getName() {
+		return name;
 	}
 
 }

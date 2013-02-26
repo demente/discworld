@@ -1,5 +1,6 @@
 package discworld.map;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import discworld.model.minion.Minion;
@@ -9,23 +10,25 @@ public class MapArea {
 
 	private String name;
 	private int number;
-	private List<Minion> minions;
+	private List<Minion> minions = new ArrayList<Minion>();
 	private Building building;
-	private List<MapArea> adajentAreas;
+	private List<MapArea> adajentAreas = new ArrayList<MapArea>();
 	private boolean troubleMarker;
 	private boolean adajentToRiver; //TODO: add to constructor
 
-	public MapArea(String name, int number) {
+	public MapArea(String name, int number, boolean river) {
 		this.name = name;
 		this.number = number;
+		this.adajentToRiver = river;
 	}
 
 	public MapArea(String name, int number, List<Minion> minions,
-			boolean troubleMarker) {
+			boolean troubleMarker, boolean river) {
 		this.name = name;
 		this.number = number;
 		this.minions = minions;
 		this.troubleMarker = troubleMarker;
+		this.adajentToRiver = river;
 	}
 
 	
@@ -125,6 +128,15 @@ public class MapArea {
 
 	public boolean isAdajent(MapArea area) {
 		return getAdajentAreas().contains(area);
+	}
+	
+	public boolean isAdajent(List<MapArea> areas) {
+		for(MapArea ma : areas){
+			if(isAdajent(ma)){
+				return true;
+			}
+		}
+		return false;
 	}
 	
 	public boolean isAdajent(int area) {

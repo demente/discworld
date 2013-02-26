@@ -25,5 +25,37 @@ public class Card {
 	
 	public void toggleAction(Action a){
 	}
+
+
+	public String getName() {
+		return name;
+	}
+
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+
+	public List<Action> getActions() {
+		return actions;
+	}
+
+
+	public void setActions(List<Action> actions) {
+		this.actions = actions;
+	}
+
+
+	public Player getOwner() {
+		return owner;
+	}
+
+
+	public void setOwner(Player owner) {
+		this.owner = owner;
+	}
+	
+	
 	
 }

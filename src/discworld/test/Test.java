@@ -28,7 +28,7 @@ public class Test {
 		minions.add(m2);
 		minions.add(m4);
 		minions.add(m3);
-		PutMinion pm = new PutMinion();
+		PutMinion pm = new PutMinion("Put minion");
 		List<Action> actions = new ArrayList<Action>();
 		actions.add(pm);
 		//Mr Boggis

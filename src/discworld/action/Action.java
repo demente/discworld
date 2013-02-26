@@ -7,4 +7,5 @@ public interface Action {
 	
 	public void toggleAction(ActionParameters params);
 	
+	public String getName();
 }

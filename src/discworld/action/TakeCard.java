@@ -3,10 +3,11 @@ package discworld.action;
 import discworld.cards.Card;
 
 public class TakeCard implements Action {
-
+	private String name;
 	private int cardNumber;
 
-	public TakeCard(int cardNumber) {
+	public TakeCard(String name, int cardNumber) {
+		this.name = name;
 		this.cardNumber = cardNumber;
 	}
 
@@ -30,6 +31,11 @@ public class TakeCard implements Action {
 				params.getActivePlayer().getCards().add(c);
 			}
 		}
+	}
+
+	@Override
+	public String getName() {
+		return name;
 	}
 
 }
