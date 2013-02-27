@@ -45,6 +45,10 @@ public class ActionParameters {
 		this.players.add(selectedPlayer);
 	}
 
+	public ActionParameters(Player activePlayer,List<Card> cards){
+		this.activePlayer = activePlayer;
+		this.selectedCards = cards;
+	}
 
 	public Player getActivePlayer() {
 		return activePlayer;

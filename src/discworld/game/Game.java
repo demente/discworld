@@ -9,6 +9,7 @@ import javax.swing.plaf.SliderUI;
 import discworld.action.Action;
 import discworld.action.ActionParameters;
 import discworld.action.BuildHouse;
+import discworld.action.DiscardCard;
 import discworld.action.PutMinion;
 import discworld.action.RemoveMinion;
 import discworld.action.RemoveTroubleMarker;
@@ -147,7 +148,18 @@ public class Game {
 			else{
 				return new ActionParameters(gs.getActivePlayer());
 			}
-			
+		case "DiscardCard":
+			DiscardCard dc = (DiscardCard) a;
+			int n = dc.getCardNumber();
+			List<Card> cards = new ArrayList<Card>();
+			while(n >0){
+				System.out.println("Choose cards to discard");
+				int card = k.nextInt();
+				cards.add(gs.getActivePlayer().getCards().get(card));
+			}
+			return new ActionParameters(gs.getActivePlayer(), cards);
+		case "TakeCard":
+			return null;
 		}
 
 		return null;

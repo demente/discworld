@@ -11,6 +11,26 @@ public class DiscardCard implements Action {
 		this.cardNumber = cardNumber;
 	}
 	
+	
+	
+	public int getCardNumber() {
+		return cardNumber;
+	}
+
+
+
+	public void setCardNumber(int cardNumber) {
+		this.cardNumber = cardNumber;
+	}
+
+
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+
+
 	@Override
 	public void toggleAction(ActionParameters params) {
 		if (params.getSelectedPlayer() != null) {
