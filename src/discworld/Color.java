@@ -1,4 +1,4 @@
-package discworld.model.player;
+package discworld;
 
 public enum Color {
 BLUE, RED, GREEN, YELLOW

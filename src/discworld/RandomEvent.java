@@ -1,4 +1,4 @@
-package discworld.cards;
+package discworld;
 
 public enum RandomEvent {
 

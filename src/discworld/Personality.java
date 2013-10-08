@@ -1,4 +1,4 @@
-package discworld.model.player;
+package discworld;
 
 import java.util.List;
 
