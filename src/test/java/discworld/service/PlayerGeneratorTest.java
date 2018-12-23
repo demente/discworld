@@ -1,6 +1,9 @@
-package discworld.model.player;
+package discworld.service;
 
+import discworld.model.player.Color;
+import discworld.model.player.Player;
 import discworld.personality.Chrysoprase;
+import discworld.service.PlayerGenerator;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;

@@ -1,6 +1,8 @@
-package discworld.model.player;
+package discworld.service;
 
 import discworld.factory.PersonalityCollection;
+import discworld.model.player.Color;
+import discworld.model.player.Player;
 import discworld.personality.Chrysoprase;
 import discworld.personality.Personality;
 
@@ -43,18 +45,16 @@ public class PlayerGenerator {
 
     private void removeChrysoprase() {
         Optional<Personality> chrysoprase = availablePersonalities.stream()
-                                                                  .filter(personality -> personality instanceof Chrysoprase)
-                                                                  .findFirst();
+                .filter(personality -> personality instanceof Chrysoprase)
+                .findFirst();
         availablePersonalities.remove(chrysoprase);
     }
 
     private Player generatePlayer() {
-        Player player = new Player();
-        player.setColor(availableColors.get(0));
+        Player player = new Player(availableColors.get(0), availablePersonalities.get(0));
         availableColors.remove(0);
-        player.setDollars(10);
-        player.setPersonality(availablePersonalities.get(0));
         availablePersonalities.remove(0);
+        player.setDollars(10);
         return player;
     }
 }
