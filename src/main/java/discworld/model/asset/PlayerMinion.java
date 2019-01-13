@@ -2,8 +2,15 @@ package discworld.model.asset;
 
 import discworld.model.player.Player;
 
-public class PlayerMinion implements Minion {
+public class PlayerMinion extends Minion {
 
-    private Player owner;
+    private final Player owner;
 
+    public PlayerMinion(Player owner) {
+        this.owner = owner;
+    }
+
+    public Player getOwner() {
+        return owner;
+    }
 }
