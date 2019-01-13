@@ -1,6 +1,15 @@
-package discworld.personality;
+package discworld.model.personality;
+
+import discworld.model.asset.CityArea;
+import discworld.model.player.Player;
+
+import java.util.List;
 
 public class Selachi implements  Personality {
+    @Override
+    public boolean hasWon(Integer numberOfPlayers, Player activePlayer, List<CityArea> cityAreas) {
+        return activePlayer.getControlledAreas().size() > 1;
+    }
     // Lord Selachii, Lord Rust, Lord de Worde – you win if at
     // the beginning of your turn you control a certain number of
     // areas. If there are only two of you playing then you need to
