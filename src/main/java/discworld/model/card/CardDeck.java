@@ -32,4 +32,8 @@ public class CardDeck {
     public boolean isEmpty() {
         return cards.isEmpty();
     }
+
+    public List<PlayerCard> getCards() {
+        return Collections.unmodifiableList(cards);
+    }
 }
