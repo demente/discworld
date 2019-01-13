@@ -2,8 +2,7 @@ package discworld.service;
 
 import discworld.model.player.Color;
 import discworld.model.player.Player;
-import discworld.personality.Chrysoprase;
-import discworld.service.PlayerGenerator;
+import discworld.model.personality.Chrysoprase;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;

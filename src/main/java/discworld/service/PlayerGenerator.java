@@ -3,8 +3,8 @@ package discworld.service;
 import discworld.factory.PersonalityCollection;
 import discworld.model.player.Color;
 import discworld.model.player.Player;
-import discworld.personality.Chrysoprase;
-import discworld.personality.Personality;
+import discworld.model.personality.Chrysoprase;
+import discworld.model.personality.Personality;
 
 import java.util.ArrayList;
 import java.util.Collections;
